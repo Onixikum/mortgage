@@ -1,5 +1,6 @@
 class Bank < ApplicationRecord
   before_save { bank_name.downcase! }
+  default_scope -> { order(updated_at: :desc) }
   validates :bank_name,             presence: true,
                                     length: { in: 3..20 },
                                     uniqueness: { case_sensitive: false }

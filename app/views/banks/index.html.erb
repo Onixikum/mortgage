@@ -1,6 +1,6 @@
 <div class="box">
   <table class="table table-striped">
-    <thead>
+    <thead class="thead-dark">
       <tr>
         <th scope="col">Bank name</th>
         <th scope="col">Interest rate (%)</th>
@@ -18,7 +18,15 @@
         <td><%= bank.maximum_loan %></td>
         <td><%= bank.minimum_down_payment %></td>
         <td><%= bank.loan_term %></td>
-        <td></td>
+        <td>
+          <span style="float: right">
+            <%= link_to "Edit", edit_bank_path(id: bank.id), class: "btn btn-warning btn-sm" %>
+            <%= link_to "Delete", bank, method: :delete,
+                                data: { confirm: "You sure?" },
+                                class: "btn btn-danger btn-sm" %>
+
+          </span>
+        </td>
       </tr>
       <% end %>
     </tbody>
