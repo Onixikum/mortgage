@@ -1,0 +1,110 @@
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* header */
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #FF8C00;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 0.1em;
+  font-weight: bold;
+  &:hover {
+    color: #8B008B;
+    text-decoration: none;
+  }
+}
+
+.navbar-nav a {
+  color: #FF8C00;
+  font-weight: bold;
+  &:hover {
+    color: #D2691E;
+    text-decoration: none;
+  }
+}
+
+div.dropdown-menu {
+  background-color: #778899;
+  box-shadow: 5px 5px 10px;
+}
+
+#navbarDropdownMenuLink {
+  color: #FF8C00;
+  padding-top: 0.7em;
+}
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #8695a6;
+  color: #778899;
+  a {
+    color: #708090;
+    &:hover {
+      color: #5d6d7c;
+    }
+  }
+  small {
+    float: left;
+  }
+  ul {
+    float: right;
+    list-style: none;
+    li {
+      float: left;
+      margin-left: 15px;
+    }
+  }
+}
+
+/* miscellaneous */
+
+.debug_dump {
+  clear: both;
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+  @include box_sizing;
+}
+
+/* box */
+
+.box {
+  width: 100%;
+  padding: 1em;
+}
+
+/* forms */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto;
+}
+
+.form {
+  width: 60%;
+  margin-left: 20%;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
