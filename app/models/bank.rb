@@ -1,4 +1,5 @@
 class Bank < ApplicationRecord
+  has_many :calculations, dependent: :destroy
   before_save { bank_name.downcase! }
   default_scope -> { order(updated_at: :desc) }
   validates :bank_name,             presence: true,

@@ -13,7 +13,7 @@
     <tbody>
       <% @banks.each do |bank| %>
       <tr>
-        <td><%= bank.bank_name %></td>
+        <td><%= link_to "#{bank.bank_name}", bank_path(id: bank.id) %></td>
         <td><%= bank.interest_rate %></td>
         <td><%= bank.maximum_loan %></td>
         <td><%= bank.minimum_down_payment %></td>

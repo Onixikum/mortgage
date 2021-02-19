@@ -1,0 +1,18 @@
+<div class="box">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Total payment</th>
+        <th scope="col">Interest payment ($)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @calculations.each do |calculation| %>
+      <tr>
+        <td><%= link_to "#{calculation.initial_loan}", calculation_path(id: calculation.id) %></td>
+        <td><%= link_to "#{calculation.down_payment}", calculation_path(id: calculation.id) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

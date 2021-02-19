@@ -4,6 +4,11 @@ class BanksController < ApplicationController
     @banks = Bank.all
   end
 
+  def show
+    @bank = Bank.find(params[:id])
+    @calculations = @bank.calculations
+  end
+
   def new
     @bank = Bank.new
   end

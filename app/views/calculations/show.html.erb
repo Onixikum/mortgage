@@ -1,0 +1,29 @@
+<div class="box">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Month</th>
+        <th scope="col">Total payment</th>
+        <th scope="col">Interest payment</th>
+        <th scope="col">Loan balance</th>
+        <th scope="col">Equity</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <% n = 1 %>
+      <% @monthly_payment.each do |monthly_payment, interest_payment| %>
+        <tr>
+
+          <td><%= n %></td>
+          <td><%= @total_payment %></td>
+          <td><%= interest_payment %></td>
+          <td><%= @equity - monthly_payment %></td>
+          <td><%= monthly_payment %></td>
+
+        </tr>
+      <% n += 1 %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
