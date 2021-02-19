@@ -1,0 +1,18 @@
+<div class="box">
+  <div class="form">
+    <%= form_for(@calculation) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <%= f.label :initial_loan, "Initial loan ($)" %>
+      <%= f.number_field :initial_loan, in: 1..500000000000, step: 0.01, class: 'form-control' %><br>
+
+      <%= f.label :down_payment, "Down payment ($)" %>
+      <%= f.number_field :down_payment, in: 1..500000000000, step: 0.01, class: 'form-control' %><br>
+
+      <%= f.label :bank_id, "Bank" %>
+      <%= f.collection_select :bank_id, @banks, :id, :bank_name %><br>
+
+      <%= f.submit "Search", class: "btn btn-outline-success" %>
+    <% end %>
+  </div>
+</div>
